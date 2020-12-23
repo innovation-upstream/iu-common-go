@@ -1,0 +1,21 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "go_default_library",
+    srcs = [
+        "connection.go",
+        "flat_one_to_many.go",
+        "helpers.go",
+        "repo.go",
+    ],
+    importpath = "gitlab.com/mobl-dev/common/repo",
+    visibility = ["//visibility:public"],
+    deps = [
+        "@com_github_go_sql_driver_mysql//:go_default_library",
+        "@com_google_cloud_go_firestore//:go_default_library",
+        "@dev_unknwon_clog_v2//:go_default_library",
+        "@org_golang_google_api//iterator:go_default_library",
+        "@org_golang_google_grpc//:go_default_library",
+        "@org_golang_google_grpc//codes:go_default_library",
+    ],
+)

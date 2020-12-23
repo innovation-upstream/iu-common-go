@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package innovation_upstream.common
+option go_package = "gitlab.innovationup.stream/innovation-upstream/iu-common-go/pb";
+
+message OwnerUIDMessage {
+  string owner_uid = 1;
+}
+
+message OwnerUIDMessageWithPage {
+  string owner_uid = 1;
+  uint32 page = 2;
+}
+
