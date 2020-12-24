@@ -6,7 +6,7 @@ go_library(
         "grpc_auth_helper.go",
         "relay.go",
     ],
-    importpath = "gitlab.com/mobl-dev/common/relay",
+    importpath = "gitlab.innovationup.stream/innovation-upstream/iu-common-go/relay",
     visibility = ["//visibility:public"],
     deps = [
         "@io_opentelemetry_go_contrib_instrumentation_google_golang_org_grpc//:go_default_library",
