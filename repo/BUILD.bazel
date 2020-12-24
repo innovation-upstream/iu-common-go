@@ -4,13 +4,12 @@ go_library(
     name = "go_default_library",
     srcs = [
         "connection.go",
-        "flat_one_to_many.go",
         "helpers.go",
-        "repo.go",
     ],
-    importpath = "gitlab.com/mobl-dev/common/repo",
+    importpath = "gitlab.innovationup.stream/innovation-upstream/iu-common-go/repo",
     visibility = ["//visibility:public"],
     deps = [
+        "//helper:go_default_library",
         "@com_github_go_sql_driver_mysql//:go_default_library",
         "@com_google_cloud_go_firestore//:go_default_library",
         "@dev_unknwon_clog_v2//:go_default_library",

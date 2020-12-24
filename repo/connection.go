@@ -7,11 +7,12 @@ import (
 
 	"cloud.google.com/go/firestore"
 	_ "github.com/go-sql-driver/mysql"
+	"gitlab.innovationup.stream/innovation-upstream/iu-common-go/helper"
 	log "unknwon.dev/clog/v2"
 )
 
 func NewFirestoreClient(ctx context.Context) *firestore.Client {
-	projectID := os.Getenv("GCP_PROJECT_ID")
+	projectID := helper.GetProjectID()
 	client, err := firestore.NewClient(ctx, projectID)
 	if err != nil {
 		log.Fatal("%v", err)
