@@ -1,29 +1,6 @@
-load("@rules_proto//proto:defs.bzl", "proto_library")
-load("@io_bazel_rules_go//go:def.bzl", "go_library")
-load("@io_bazel_rules_go//proto:def.bzl", "go_proto_library")
 load("@bazel_gazelle//:def.bzl", "gazelle")
 
 # gazelle:prefix gitlab.innovationup.stream/innovation-upstream/iu-common-go
 gazelle(
     name = "gazelle",
-)
-
-proto_library(
-    name = "pb_proto",
-    srcs = ["Common.proto"],
-    visibility = ["//visibility:public"],
-)
-
-go_proto_library(
-    name = "pb_go_proto",
-    importpath = "gitlab.innovationup.stream/innovation-upstream/iu-common-go/pb",
-    proto = ":pb_proto",
-    visibility = ["//visibility:public"],
-)
-
-go_library(
-    name = "go_default_library",
-    embed = [":pb_go_proto"],
-    importpath = "gitlab.innovationup.stream/innovation-upstream/iu-common-go/pb",
-    visibility = ["//visibility:public"],
 )
