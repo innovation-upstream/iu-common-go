@@ -1,5 +1,4 @@
-// Deprecated
-package init
+package monitor
 
 import (
 	"os"
