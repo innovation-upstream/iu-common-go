@@ -7,7 +7,7 @@ go_library(
         "logger.go",
         "trace.go",
     ],
-    importpath = "gitlab.innovationup.stream/innovation-upstream/iu-common-go/init",
+    importpath = "gitlab.innovationup.stream/innovation-upstream/iu-common-go/monitor",
     visibility = ["//visibility:public"],
     deps = [
         "@com_github_bugsnag_bugsnag_go//:go_default_library",
