@@ -17,7 +17,14 @@ go_proto_library(
 
 go_library(
     name = "go_default_library",
-    embed = [":pb_go_proto"],
-    importpath = "gitlab.innovationup.stream/innovation-upstream/iu-common-go/identity/pb",
+    embed = [":identity_go_proto"],
+    importpath = "gitlab.innovationup.stream/innovation-upstream/iu-common-go/identity",
+    visibility = ["//visibility:public"],
+)
+
+go_proto_library(
+    name = "identity_go_proto",
+    importpath = "gitlab.innovationup.stream/innovation-upstream/iu-common-go/identity",
+    proto = ":pb_proto",
     visibility = ["//visibility:public"],
 )

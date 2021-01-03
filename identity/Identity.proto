@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 package innovation_upstream.identity;
-option go_package = "gitlab.innovationup.stream/innovation-upstream/iu-common-go/identity/pb";
+option go_package = "gitlab.innovationup.stream/innovation-upstream/iu-common-go/identity";
 
 message OwnerUIDMessage {
   string owner_uid = 1;
