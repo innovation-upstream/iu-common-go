@@ -3,28 +3,21 @@ load("@io_bazel_rules_go//go:def.bzl", "go_library")
 load("@io_bazel_rules_go//proto:def.bzl", "go_proto_library")
 
 proto_library(
-    name = "pb_proto",
+    name = "identity_proto",
     srcs = ["Identity.proto"],
-    visibility = ["//visibility:public"],
-)
-
-go_proto_library(
-    name = "pb_go_proto",
-    importpath = "gitlab.innovationup.stream/innovation-upstream/iu-common-go/identity/pb",
-    proto = ":pb_proto",
-    visibility = ["//visibility:public"],
-)
-
-go_library(
-    name = "go_default_library",
-    embed = [":identity_go_proto"],
-    importpath = "gitlab.innovationup.stream/innovation-upstream/iu-common-go/identity",
     visibility = ["//visibility:public"],
 )
 
 go_proto_library(
     name = "identity_go_proto",
     importpath = "gitlab.innovationup.stream/innovation-upstream/iu-common-go/identity",
-    proto = ":pb_proto",
+    proto = ":identity_proto",
+    visibility = ["//visibility:public"],
+)
+
+go_library(
+    name = "identity",
+    embed = [":identity_go_proto"],
+    importpath = "gitlab.innovationup.stream/innovation-upstream/iu-common-go/identity",
     visibility = ["//visibility:public"],
 )

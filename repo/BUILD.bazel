@@ -1,7 +1,7 @@
 load("@io_bazel_rules_go//go:def.bzl", "go_library")
 
 go_library(
-    name = "go_default_library",
+    name = "repo",
     srcs = [
         "connection.go",
         "helpers.go",
@@ -9,12 +9,12 @@ go_library(
     importpath = "gitlab.innovationup.stream/innovation-upstream/iu-common-go/repo",
     visibility = ["//visibility:public"],
     deps = [
-        "//helper:go_default_library",
-        "@com_github_go_sql_driver_mysql//:go_default_library",
-        "@com_google_cloud_go_firestore//:go_default_library",
-        "@dev_unknwon_clog_v2//:go_default_library",
-        "@org_golang_google_api//iterator:go_default_library",
+        "//helper",
+        "@com_github_go_sql_driver_mysql//:mysql",
+        "@com_google_cloud_go_firestore//:firestore",
+        "@dev_unknwon_clog_v2//:clog",
+        "@org_golang_google_api//iterator",
         "@org_golang_google_grpc//:go_default_library",
-        "@org_golang_google_grpc//codes:go_default_library",
+        "@org_golang_google_grpc//codes",
     ],
 )

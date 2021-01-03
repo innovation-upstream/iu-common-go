@@ -1,6 +1,7 @@
 load("@bazel_gazelle//:def.bzl", "gazelle")
 
 # gazelle:prefix gitlab.innovationup.stream/innovation-upstream/iu-common-go
+# gazelle:go_naming_convention import
 gazelle(
     name = "gazelle",
 )
