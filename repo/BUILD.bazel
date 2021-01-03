@@ -18,3 +18,9 @@ go_library(
         "@org_golang_google_grpc//codes",
     ],
 )
+
+alias(
+    name = "go_default_library",
+    actual = ":repo",
+    visibility = ["//visibility:public"],
+)

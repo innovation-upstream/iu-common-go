@@ -17,3 +17,9 @@ go_library(
         "@io_opentelemetry_go_otel_sdk//trace",
     ],
 )
+
+alias(
+    name = "go_default_library",
+    actual = ":monitor",
+    visibility = ["//visibility:public"],
+)

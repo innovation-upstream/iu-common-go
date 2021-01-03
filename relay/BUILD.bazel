@@ -17,3 +17,9 @@ go_library(
         "@org_golang_google_grpc//metadata",
     ],
 )
+
+alias(
+    name = "go_default_library",
+    actual = ":relay",
+    visibility = ["//visibility:public"],
+)
