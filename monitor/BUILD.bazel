@@ -10,11 +10,11 @@ go_library(
     importpath = "gitlab.innovationup.stream/innovation-upstream/iu-common-go/monitor",
     visibility = ["//visibility:public"],
     deps = [
-        "@com_github_bugsnag_bugsnag_go//:bugsnag-go",
-        "@com_github_googlecloudplatform_opentelemetry_operations_go_exporter_trace//:trace",
-        "@dev_unknwon_clog_v2//:clog",
-        "@io_opentelemetry_go_otel//api/global",
-        "@io_opentelemetry_go_otel_sdk//trace",
+        "@com_github_bugsnag_bugsnag_go//:go_default_library",
+        "@com_github_googlecloudplatform_opentelemetry_operations_go_exporter_trace//:go_default_library",
+        "@dev_unknwon_clog_v2//:go_default_library",
+        "@io_opentelemetry_go_otel//api/global:go_default_library",
+        "@io_opentelemetry_go_otel_sdk//trace:go_default_library",
     ],
 )
 

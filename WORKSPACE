@@ -373,8 +373,8 @@ go_repository(
 go_repository(
     name = "com_google_cloud_go_firestore",
     importpath = "cloud.google.com/go/firestore",
-    sum = "h1:A8eudYNUtdspdyoR6OaPoZxSFxE4qu7ctKcxvhGsUOE=",
-    version = "v1.4.0",
+    sum = "h1:zrl+2VJAYC/C6WzEPnkqZIBeHyHFs/UmtzJdXU4Bvmo=",
+    version = "v1.2.0",
 )
 
 go_repository(
