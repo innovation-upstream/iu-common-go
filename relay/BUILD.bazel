@@ -2,10 +2,7 @@ load("@io_bazel_rules_go//go:def.bzl", "go_library")
 
 go_library(
     name = "relay",
-    srcs = [
-        "grpc_auth_helper.go",
-        "relay.go",
-    ],
+    srcs = ["grpc_auth_helper.go"],
     importpath = "gitlab.innovationup.stream/innovation-upstream/iu-common-go/relay",
     visibility = ["//visibility:public"],
     deps = [
