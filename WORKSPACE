@@ -706,6 +706,27 @@ go_repository(
     version = "v0.10.0",
 )
 
+go_repository(
+    name = "com_github_casbin_casbin_v2",
+    importpath = "github.com/casbin/casbin/v2",
+    sum = "h1:V6TSSwplERP/KP6aEXm6C1Sg29bofM1aH1y01Hm+y0I=",
+    version = "v2.23.0",
+)
+
+go_repository(
+    name = "com_github_knetic_govaluate",
+    importpath = "github.com/Knetic/govaluate",
+    sum = "h1:1G1pk05UrOh0NlF1oeaaix1x8XzrfjIDK47TY0Zehcw=",
+    version = "v3.0.1-0.20171022003610-9aa49832a739+incompatible",
+)
+
+go_repository(
+    name = "com_github_reedom_casbin_firestore_adapter",
+    importpath = "github.com/reedom/casbin-firestore-adapter",
+    sum = "h1:9tE7VJEqVn+bkJ2j694OucTK4AmBkk8zjRYFO+8SkpY=",
+    version = "v0.0.0-20200726095359-bc86ae44a7a9",
+)
+
 go_rules_dependencies()
 
 go_register_toolchains()
