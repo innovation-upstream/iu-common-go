@@ -6,6 +6,7 @@ import (
 
 type AccessControl interface {
 	Enforce(sub, domain, mod, field, act string) (bool, error)
+	AddPolicy(sub, domain, mod, field, act string) (bool, error)
 }
 
 type accessControl struct {
@@ -18,8 +19,17 @@ func NewAccessControl(enforcer *casbin.Enforcer) AccessControl {
 	}
 }
 
-func (r *accessControl) Enforce(sub, domain, mod, field, act string) (bool, error) {
-	ok, err := r.enforcer.Enforce(sub, domain, mod, field, act)
+func (ac *accessControl) Enforce(sub, domain, mod, field, act string) (bool, error) {
+	ok, err := ac.enforcer.Enforce(sub, domain, mod, field, act)
+	if err != nil {
+		return ok, err
+	}
+
+	return ok, nil
+}
+
+func (ac *accessControl) AddPolicy(sub, domain, mod, field, act string) (bool, error) {
+	ok, err := ac.enforcer.AddPolicy(sub, domain, mod, field, act)
 	if err != nil {
 		return ok, err
 	}
