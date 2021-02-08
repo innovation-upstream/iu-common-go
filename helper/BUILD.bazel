@@ -3,11 +3,18 @@ load("@io_bazel_rules_go//go:def.bzl", "go_library")
 go_library(
     name = "helper",
     srcs = [
+        "access_control.go",
         "google_cloud.go",
         "transform.go",
     ],
     importpath = "gitlab.innovationup.stream/innovation-upstream/iu-common-go/helper",
     visibility = ["//visibility:public"],
+    deps = [
+        "//repo",
+        "@com_github_casbin_casbin_v2//:go_default_library",
+        "@com_github_reedom_casbin_firestore_adapter//:go_default_library",
+        "@dev_unknwon_clog_v2//:go_default_library",
+    ],
 )
 
 alias(
