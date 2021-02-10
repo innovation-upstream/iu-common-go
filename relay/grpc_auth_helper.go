@@ -44,13 +44,13 @@ func (g *grpcAuthHelper) AuthorizeGCPContext(ctx context.Context, addr string) (
 }
 
 func (g *grpcAuthHelper) DialRPCService(ctx context.Context, rpcEndpoint string, tracer trace.Tracer) (context.Context, *grpc.ClientConn, error) {
-	ctx, err := g.AuthorizeGCPContext(ctx, rpcEndpoint)
-	if err != nil {
-		return ctx, nil, err
-	}
-
 	var opts []grpc.DialOption
 	if os.Getenv("ENVIRONMENT") == "production" {
+		ctx, err := g.AuthorizeGCPContext(ctx, rpcEndpoint)
+		if err != nil {
+			return ctx, nil, err
+		}
+
 		creds := credentials.NewTLS(&tls.Config{
 			InsecureSkipVerify: true,
 		})
