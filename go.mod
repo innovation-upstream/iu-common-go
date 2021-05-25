@@ -13,7 +13,7 @@ require (
 	github.com/gofrs/uuid v3.3.0+incompatible // indirect
 	github.com/golang/protobuf v1.4.3
 	github.com/kardianos/osext v0.0.0-20190222173326-2bc1f35cddc0 // indirect
-	github.com/pkg/errors v0.9.1 // indirect
+	github.com/pkg/errors v0.9.1
 	go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc v0.10.1
 	go.opentelemetry.io/otel v0.10.0
 	go.opentelemetry.io/otel/sdk v0.10.0

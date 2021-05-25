@@ -11,11 +11,14 @@ go_library(
     deps = [
         "//helper",
         "@com_github_go_sql_driver_mysql//:go_default_library",
+        "@com_github_pkg_errors//:go_default_library",
         "@com_google_cloud_go_firestore//:go_default_library",
         "@dev_unknwon_clog_v2//:go_default_library",
         "@org_golang_google_api//iterator:go_default_library",
+        "@org_golang_google_api//option:go_default_library",
         "@org_golang_google_grpc//:go_default_library",
         "@org_golang_google_grpc//codes:go_default_library",
+        "@org_golang_google_grpc//keepalive:go_default_library",
     ],
 )
 
