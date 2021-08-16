@@ -7,25 +7,30 @@ import (
 	"os"
 	"strings"
 
-	grpcotel "go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc"
-	"go.opentelemetry.io/otel/api/trace"
+	"go.opentelemetry.io/otel/trace"
+
+	"go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc"
 	"google.golang.org/api/idtoken"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials"
 	grpcMetadata "google.golang.org/grpc/metadata"
 )
 
-type GRPCAuthHelper interface {
-	AuthorizeGCPContext(ctx context.Context, addr string) (context.Context, error)
-	DialRPCService(ctx context.Context, rpcEndpoint string, tracer trace.Tracer) (context.Context, *grpc.ClientConn, error)
-}
+type (
+	GRPCAuthHelper interface {
+		AuthorizeGCPContext(ctx context.Context, addr string) (context.Context, error)
+		DialRPCService(ctx context.Context, rpcEndpoint string, tracer trace.Tracer) (context.Context, *grpc.ClientConn, error)
+	}
 
-type grpcAuthHelper struct {
-}
+	grpcAuthHelper struct {
+	}
 
-func NewGRPCAuthHelper() GRPCAuthHelper {
+	GRPCAuthHelperFactory func() GRPCAuthHelper
+)
+
+var NewGRPCAuthHelper = GRPCAuthHelperFactory(func() GRPCAuthHelper {
 	return &grpcAuthHelper{}
-}
+})
 
 func (g *grpcAuthHelper) AuthorizeGCPContext(ctx context.Context, addr string) (context.Context, error) {
 	if os.Getenv("ENVIRONMENT") == "production" {
@@ -62,7 +67,7 @@ func (g *grpcAuthHelper) DialRPCService(ctx context.Context, rpcEndpoint string,
 	} else {
 		opts = append(opts, grpc.WithInsecure())
 	}
-	interceptor := grpcotel.UnaryClientInterceptor(tracer)
+	interceptor := otelgrpc.UnaryClientInterceptor(tracer)
 	opts = append(opts, grpc.WithUnaryInterceptor(interceptor))
 	conn, err := grpc.DialContext(ctx, rpcEndpoint, opts...)
 	if err != nil {

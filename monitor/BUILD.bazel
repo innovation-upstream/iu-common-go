@@ -12,8 +12,9 @@ go_library(
     deps = [
         "@com_github_bugsnag_bugsnag_go//:go_default_library",
         "@com_github_googlecloudplatform_opentelemetry_operations_go_exporter_trace//:go_default_library",
+        "@com_github_pkg_errors//:go_default_library",
         "@dev_unknwon_clog_v2//:go_default_library",
-        "@io_opentelemetry_go_otel//api/global:go_default_library",
+        "@io_opentelemetry_go_otel//:go_default_library",
         "@io_opentelemetry_go_otel_sdk//trace:go_default_library",
     ],
 )
