@@ -9,7 +9,7 @@ import (
 func InitClog() {
 	logLevel := clog.LevelTrace
 	if os.Getenv("ENVIRONMENT") == "production" {
-		logLevel = clog.LevelWarn
+		logLevel = clog.LevelInfo
 	}
 	err := clog.NewConsole(100, clog.ConsoleConfig{
 		Level: logLevel,
@@ -17,5 +17,5 @@ func InitClog() {
 	if err != nil {
 		panic("unable to create new logger: " + err.Error())
 	}
-	clog.Trace("Clog initialized")
+	clog.Info("Clog initialized")
 }
