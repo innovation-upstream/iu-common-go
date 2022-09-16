@@ -12,6 +12,10 @@ import (
 )
 
 func InitCloudTraceOpenTelemetry(ctx context.Context) (func(ctx context.Context) error, error) {
+	if os.Getenv("ENVIRONMENT") != "production" {
+		return nil, nil
+	}
+
 	// TODO: add support for alternate, open-source exporters
 	projectID := os.Getenv("GOOGLE_CLOUD_PROJECT")
 	exporter, err := texporter.NewExporter(texporter.WithProjectID(projectID))
