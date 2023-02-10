@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 package innovation_upstream.pubsub;
-option go_package = "gitlab.innovationup.stream/innovation-upstream/iu-common-go/pubsub";
+option go_package = "github.com/innovation-upstream/iu-common-go/pubsub";
 
 message Message {
   bytes data = 1;

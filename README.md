@@ -21,5 +21,5 @@ password <gitlab personal access token>
 
 ```shell
 $ go env -w GOPRIVATE=gitlab.innovationup.stream
-$ go get gitlab.innovationup.stream/innovation-upstream/iu-common-go
+$ go get github.com/innovation-upstream/iu-common-go
 ```

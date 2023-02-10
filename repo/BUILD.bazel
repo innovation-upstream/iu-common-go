@@ -9,21 +9,15 @@ go_library(
     importpath = "github.com/innovation-upstream/iu-common-go/repo",
     visibility = ["//visibility:public"],
     deps = [
-        "@com_github_go_sql_driver_mysql//:go_default_library",
-        "@com_github_pkg_errors//:go_default_library",
-        "@com_google_cloud_go_firestore//:go_default_library",
-        "@dev_unknwon_clog_v2//:go_default_library",
-        "@org_golang_google_api//iterator:go_default_library",
-        "@org_golang_google_api//option:go_default_library",
+        "//helper",
+        "@com_github_go_sql_driver_mysql//:mysql",
+        "@com_github_pkg_errors//:errors",
+        "@com_google_cloud_go_firestore//:firestore",
+        "@dev_unknwon_clog_v2//:clog",
+        "@org_golang_google_api//iterator",
+        "@org_golang_google_api//option",
         "@org_golang_google_grpc//:go_default_library",
-        "@org_golang_google_grpc//codes:go_default_library",
-        "@org_golang_google_grpc//keepalive:go_default_library",
-        "@stream_innovationup_gitlab_innovation_upstream_iu_common_go//helper:go_default_library",
+        "@org_golang_google_grpc//codes",
+        "@org_golang_google_grpc//keepalive",
     ],
-)
-
-alias(
-    name = "go_default_library",
-    actual = ":repo",
-    visibility = ["//visibility:public"],
 )

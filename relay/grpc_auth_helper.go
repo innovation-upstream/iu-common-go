@@ -7,7 +7,6 @@ import (
 	"os"
 	"strings"
 
-	"go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc"
 	"google.golang.org/api/idtoken"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials"
@@ -65,8 +64,6 @@ func (g *grpcAuthHelper) DialRPCService(ctx context.Context, rpcEndpoint string)
 	} else {
 		opts = append(opts, grpc.WithInsecure())
 	}
-	interceptor := otelgrpc.UnaryClientInterceptor()
-	opts = append(opts, grpc.WithUnaryInterceptor(interceptor))
 	conn, err := grpc.DialContext(ctx, rpcEndpoint, opts...)
 	if err != nil {
 		return ctx, conn, err

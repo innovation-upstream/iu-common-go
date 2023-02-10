@@ -9,9 +9,3 @@ go_library(
     importpath = "github.com/innovation-upstream/iu-common-go/helper",
     visibility = ["//visibility:public"],
 )
-
-alias(
-    name = "go_default_library",
-    actual = ":helper",
-    visibility = ["//visibility:public"],
-)

@@ -9,13 +9,7 @@ go_library(
     importpath = "github.com/innovation-upstream/iu-common-go/monitor",
     visibility = ["//visibility:public"],
     deps = [
-        "@com_github_bugsnag_bugsnag_go//:go_default_library",
-        "@dev_unknwon_clog_v2//:go_default_library",
+        "@com_github_bugsnag_bugsnag_go//:bugsnag-go",
+        "@dev_unknwon_clog_v2//:clog",
     ],
-)
-
-alias(
-    name = "go_default_library",
-    actual = ":monitor",
-    visibility = ["//visibility:public"],
 )

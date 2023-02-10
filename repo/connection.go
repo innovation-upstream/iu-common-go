@@ -9,7 +9,7 @@ import (
 	"cloud.google.com/go/firestore"
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/pkg/errors"
-	"gitlab.innovationup.stream/innovation-upstream/iu-common-go/helper"
+	"github.com/innovation-upstream/iu-common-go/helper"
 	"google.golang.org/api/option"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/keepalive"
