@@ -21,3 +21,9 @@ go_library(
     importpath = "github.com/innovation-upstream/iu-common-go/pubsub",
     visibility = ["//visibility:public"],
 )
+
+alias(
+    name = "go_default_library",
+    actual = ":pubsub",
+    visibility = ["//visibility:public"],
+)
