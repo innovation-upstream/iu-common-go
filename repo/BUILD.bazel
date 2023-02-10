@@ -6,10 +6,9 @@ go_library(
         "connection.go",
         "helpers.go",
     ],
-    importpath = "gitlab.innovationup.stream/innovation-upstream/iu-common-go/repo",
+    importpath = "github.com/innovation-upstream/iu-common-go/repo",
     visibility = ["//visibility:public"],
     deps = [
-        "//helper",
         "@com_github_go_sql_driver_mysql//:go_default_library",
         "@com_github_pkg_errors//:go_default_library",
         "@com_google_cloud_go_firestore//:go_default_library",
@@ -19,6 +18,7 @@ go_library(
         "@org_golang_google_grpc//:go_default_library",
         "@org_golang_google_grpc//codes:go_default_library",
         "@org_golang_google_grpc//keepalive:go_default_library",
+        "@stream_innovationup_gitlab_innovation_upstream_iu_common_go//helper:go_default_library",
     ],
 )
 

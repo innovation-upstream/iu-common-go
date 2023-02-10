@@ -6,7 +6,7 @@ go_library(
         "google_cloud.go",
         "transform.go",
     ],
-    importpath = "gitlab.innovationup.stream/innovation-upstream/iu-common-go/helper",
+    importpath = "github.com/innovation-upstream/iu-common-go/helper",
     visibility = ["//visibility:public"],
 )
 
